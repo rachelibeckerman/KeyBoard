@@ -2,34 +2,37 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+import Letter from './Letter/Letter'
 
 function App() {
-  const [count, setCount] = useState(0)
+
+  const [enteredBody,setEnteredBody] = useState('');
+
+  function changeBodyHandler(val){
+    setEnteredBody(enteredBody + val);
+  }
+    const LanguageArr = ['EnglishLetters','HebrewLetters'];
+     const EnglisHupperCase = ['Q','W','E','R','T','Y','U','I','O','P','A','S','D','F','G','H','J','K','L','Z','X','C','V','B','N','M']
+    const EnglishLetters = ['q','w','e','r','t','y','u','i','o','p','a','s','d','f','g','h','j','k','l','z','x','c','v','b','n','m']
+    const HebrewLetters = ['ק','ר','א','ט','ו','ן','ם','פ','ש','ד','ג','כ','ע','י','ח','ל','ך','ף','ז','ס','ב','ה','נ','מ','צ','ת','ץ']
+   const [RequestedArray,setRequestedArray]= useState(EnglishLetters) ;
+
+ function changeArray(val){
+  setRequestedArray(val);
+ }
+      // const ButtonsLanguage = LanguageArr.map((arr,i)=>
+      
+       const ButtonsLetters = RequestedArray.map((letter,i)=>
+       <Letter key = {i} value = {letter} onBodyChange = {changeBodyHandler} />)
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+        <p>{enteredBody}</p>
+        {ButtonsLetters}
+        {/* {ButtonsLanguage} */}
+        <Letter value = {RequestedArray} onBodyChange = {changeArray} />
     </>
   )
-}
+  }
 
 export default App
