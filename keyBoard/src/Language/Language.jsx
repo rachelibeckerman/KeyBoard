@@ -3,7 +3,7 @@ import Letters from '../Letters/Letters';
 
 function Language(props) {
 
-    const Languages = ['English', 'עברית', 'UpperCase']
+    const Languages = ['English', 'עברית', 'UpperCase', '&123', '😀']
 
     function onChange(language) {
         let RequestedArray;
@@ -13,6 +13,10 @@ function Language(props) {
             case "UpperCase": RequestedArray = "EnglishUC";
                 break;
             case "עברית": RequestedArray = "Hebrew";
+                break;
+            case "&123": RequestedArray = "Numbers";
+                break;
+            case "😀": RequestedArray = "Emojis";
                 break;
         }
         props.setState(RequestedArray);

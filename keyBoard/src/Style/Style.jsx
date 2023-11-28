@@ -2,27 +2,37 @@ import React, { useState } from "react";
 
 function Style(props) {
     const colors = ['red', 'black', 'blue', 'pink'];
+    const sizes = ['Larger', 'smaller'];
+    const font = ['cursive', 'inherit', 'fantasy',];
 
-    function onChange(val) {
-       props.setState(props.state.color = val);
-        // switch (val) {
-        //     case "red": props.setState(props.state.color = 'red');
-        //         break;
-        //     case "black": props.setState(props.state.color = 'black');
-        //         break;
-        //     case "blue": props.setState(props.state.color = 'blue');
-        //         break;
-        //     case "pink": props.setState(props.state.color = 'pink');
-        //         break;
-        // }
+    function onChangeColor(val) {
+        props.setState({ color: val, size: props.state.size, font: props.state.font });
     }
 
-    const createStyleButtons = colors.map((sBtn, i) =>
-        <button style ={{background: sBtn}} key={i} className={sBtn} onClick={() => onChange(sBtn)}>{sBtn}</button>)
+    function onChangeSize(val) {
+        if (val == 'Larger')
+            props.setState({ color: props.state.color, size: props.state.size + 1, font: props.state.font });
+        else if (props.state.size > 10)
+            props.setState({ color: props.state.color, size: props.state.size - 1, font: props.state.font });
+    }
 
+    function onChangeFont(val) {
+        props.setState({ color: props.state.color, size: props.state.size, font:val });
+    }
+
+    const createColorsButtons = colors.map((sBtn, i) =>
+        <button style={{ color: sBtn }} key={i} className={sBtn} onClick={() => onChangeColor(sBtn)}>{sBtn}</button>)
+
+    const createSizesButtons = sizes.map((sBtn, i) =>
+        <button key={i} className={sBtn} onClick={() => onChangeSize(sBtn)}>{sBtn}</button>)
+
+    const createFontsButtons = font.map((sBtn, i) =>
+    <button style={{fontFamily:sBtn}} key={i} className={sBtn} onClick={() => onChangeFont(sBtn)}>{sBtn}</button>)
     return (
         <>
-            {createStyleButtons}
+            {createColorsButtons}
+            {createSizesButtons}
+            {createFontsButtons}
         </>
     );
 }

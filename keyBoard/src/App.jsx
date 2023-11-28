@@ -7,20 +7,22 @@ import Language from './Language/Language'
 import SpecialButtons from './SpecialButtons/SpecialButtons'
 import DisplayBody from './DisplayBody/DisplayBody'
 import Style from './Style/Style'
-
+import ChangeAllStyle from './ChangeAllStyle/ChangeAllStyle'
+import Undo from './Undo/Undo'
 function App() {
   const [enteredBody, setEnteredBody] = useState([]);
   const [RequestedArray, setRequestedArray] = useState("EnglishLC")
-  const [myStyle , setStyle] = useState({color:'black',size:'1em',font:'inherit'})
+  const [myStyle , setStyle] = useState({color:'black',size:17,font:'inherit'})
 
   
   return (
     <>
-      <p><DisplayBody state = {enteredBody}/></p>
+      <p ><DisplayBody state = {enteredBody}/></p>
       <Letters state={enteredBody} setState={setEnteredBody} requestedArray={RequestedArray} Mstyle = {myStyle} />
-      <Language state={RequestedArray} setState={setRequestedArray} />
-      <SpecialButtons state={enteredBody} setState={setEnteredBody} />
-      <Style state={myStyle} setState={setStyle} />
+      <SpecialButtons state={enteredBody} setState={setEnteredBody} /><br/>
+      <Language state={RequestedArray} setState={setRequestedArray} /><br/>
+      <Style state={myStyle} setState={setStyle} /><br />
+      <ChangeAllStyle state={enteredBody} setState={setEnteredBody} setStyle = {setStyle} />
     </>
   )
 }
