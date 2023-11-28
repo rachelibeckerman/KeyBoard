@@ -5,9 +5,9 @@ function SpecialButtons(props) {
 
     function onChange(val) {
         switch (val) {
-            case "Enter": props.setState(props.state + '\n');
+            case "Enter": props.setState(cur => [...cur, { value: <br/>, style: {} }]);
                 break;
-            case "Space": props.setState(props.state + ' ');
+            case "Space": props.setState(cur => [...cur,{ value: " ", style: {} }]);
                 break;
             case "Delete": props.setState(props.state.slice(0, -1));
                 break;
@@ -16,6 +16,7 @@ function SpecialButtons(props) {
 
     const createSpecialButtons = specialButtons.map((sBtn, i) =>
         <button key={i} className={sBtn} onClick={() => onChange(sBtn)}>{sBtn}</button>)
+
     return (
         <>
             {createSpecialButtons}
