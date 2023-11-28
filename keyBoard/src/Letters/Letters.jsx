@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 function Letters(props) {
 
    function onBodyChange(val) {
+      props.Undo.push(props.state)
       props.setState(cur => [...cur, { value: val, style: props.Mstyle }]);
    }
 
