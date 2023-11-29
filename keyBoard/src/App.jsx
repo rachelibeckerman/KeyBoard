@@ -20,7 +20,7 @@ function App() {
     <>
       <p ><DisplayBody state = {enteredBody}/></p>
       <Letters state={enteredBody} setState={setEnteredBody} requestedArray={RequestedArray} Mstyle = {myStyle} Undo={undoArray} setUndo={setundoArray}/>
-      <SpecialButtons state={enteredBody} setState={setEnteredBody} />
+      <SpecialButtons state={enteredBody} setState={setEnteredBody} Undo={undoArray} setUndo={setundoArray} />
       <Undo state={enteredBody} setState={setEnteredBody} setStyle = {setStyle} Undo={undoArray} setUndo={setundoArray}/><br/>
       <Language state={RequestedArray} setState={setRequestedArray} /><br/>
       <Style state={myStyle} setState={setStyle} Undo={undoArray} setUndo={setundoArray}/><br />

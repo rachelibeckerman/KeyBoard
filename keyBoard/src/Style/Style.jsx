@@ -6,6 +6,7 @@ function Style(props) {
     const font = ['cursive', 'inherit', 'fantasy',];
 
     function onChangeColor(val) {
+        //props.setUndo(cur => [...cur,props.state])
         props.setState({ color: val, size: props.state.size, font: props.state.font });
     }
 

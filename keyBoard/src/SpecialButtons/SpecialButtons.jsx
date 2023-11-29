@@ -5,11 +5,12 @@ function SpecialButtons(props) {
 
     function onChange(val) {
         switch (val) {
-            case "Enter": props.setState(cur => [...cur, { value: <br/>, style: {} }]);
+            case "Enter": props.setState(cur => [...cur, { value: <br />, style: {} }]);
                 break;
-            case "Space": props.setState(cur => [...cur,{ value: " ", style: {} }]);
+            case "Space": props.setState(cur => [...cur, { value: " ", style: {} }]);
                 break;
-            case "Delete": props.setState(props.state.slice(0, -1));
+            case "Delete": props.setUndo(cur => [...cur, props.state])
+                props.setState(props.state.slice(0, -1));
                 break;
         }
     }
