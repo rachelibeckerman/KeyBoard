@@ -1,18 +1,21 @@
-import React,{useState} from "react";
+import React, { useState } from "react";
 
 
-function Undo(props){
-    
-    function onUndo(){
+function Undo(props) {
+
+    function onUndo() {
+
         let lastAction = props.Undo.pop()
-       props.setState(lastAction) ;
-      props.setStyle(lastAction[lastAction.length-1].style) 
+        if (lastAction != undefined) {
+            props.setState(lastAction);
+            props.setStyle(lastAction[lastAction.length - 1].style)
+        }
     }
-    const createUndoButton = <button  onClick={() => onUndo()}>Undo</button>
-    return(
-    <>
-    {createUndoButton}
-    </>
+    const createUndoButton = <button onClick={() => onUndo()}>Undo</button>
+    return (
+        <>
+            {createUndoButton}
+        </>
     );
 }
 

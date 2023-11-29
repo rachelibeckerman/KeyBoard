@@ -22,8 +22,11 @@ function App() {
       <Letters state={enteredBody} setState={setEnteredBody} requestedArray={RequestedArray} Mstyle = {myStyle} Undo={undoArray} setUndo={setundoArray}/>
       <SpecialButtons state={enteredBody} setState={setEnteredBody} Undo={undoArray} setUndo={setundoArray} />
       <Undo state={enteredBody} setState={setEnteredBody} setStyle = {setStyle} Undo={undoArray} setUndo={setundoArray}/><br/>
+      <h3>Language</h3>
       <Language state={RequestedArray} setState={setRequestedArray} /><br/>
+      <h3>style</h3>
       <Style state={myStyle} setState={setStyle} Undo={undoArray} setUndo={setundoArray}/><br />
+      <h3>General changes</h3>
       <ChangeAllStyle state={enteredBody} setState={setEnteredBody} setStyle = {setStyle} />
       
     </>
