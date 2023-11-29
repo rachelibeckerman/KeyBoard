@@ -10,7 +10,7 @@ import Style from './Style/Style'
 import ChangeAllStyle from './ChangeAllStyle/ChangeAllStyle'
 import Undo from './Undo/Undo'
 function App() {
-  let undoArray = []
+  const [undoArray, setundoArray] = useState([]);
   const [enteredBody, setEnteredBody] = useState([]);
   const [RequestedArray, setRequestedArray] = useState("EnglishLC")
   const [myStyle , setStyle] = useState({color:'black',size:17,font:'inherit'})
@@ -19,11 +19,11 @@ function App() {
   return (
     <>
       <p ><DisplayBody state = {enteredBody}/></p>
-      <Letters state={enteredBody} setState={setEnteredBody} requestedArray={RequestedArray} Mstyle = {myStyle} Undo={undoArray}/>
+      <Letters state={enteredBody} setState={setEnteredBody} requestedArray={RequestedArray} Mstyle = {myStyle} Undo={undoArray} setUndo={setundoArray}/>
       <SpecialButtons state={enteredBody} setState={setEnteredBody} />
-      <Undo state={enteredBody} setState={setEnteredBody} setStyle = {setStyle} Undo={undoArray}/><br/>
+      <Undo state={enteredBody} setState={setEnteredBody} setStyle = {setStyle} Undo={undoArray} setUndo={setundoArray}/><br/>
       <Language state={RequestedArray} setState={setRequestedArray} /><br/>
-      <Style state={myStyle} setState={setStyle} Undo={undoArray}/><br />
+      <Style state={myStyle} setState={setStyle} Undo={undoArray} setUndo={setundoArray}/><br />
       <ChangeAllStyle state={enteredBody} setState={setEnteredBody} setStyle = {setStyle} />
       
     </>
