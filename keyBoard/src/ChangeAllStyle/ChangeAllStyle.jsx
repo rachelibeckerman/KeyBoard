@@ -17,8 +17,8 @@ function ChangeAllStyle(props) {
             case "Upper All":
                 //props.state.map(element => { element.value = element.value.toUpperCase(), element.style = element.style });
                 props.setState([])
-                props.state.map(element => { props.setState(cur => [...cur, { value: element.value.toUpperCase(), style: element.style }]) });
-
+                props.state.map(element => {(element.value>='a'&element.value<='z')? props.setState(cur => [...cur, { value: element.value.toUpperCase(), style: element.style }]):props.setState(cur=>[...cur,element] )});
+                
                 //props.setState(cur => [...cur, { value: "", style: {} }]);
                 break;
             case "Lower All":

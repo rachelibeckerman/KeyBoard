@@ -14,7 +14,7 @@ function App() {
   const [enteredBody, setEnteredBody] = useState([]);
   const [RequestedArray, setRequestedArray] = useState("EnglishLC")
   const [myStyle , setStyle] = useState({color:'black',size:17,font:'inherit'})
-console.log(undoArray)
+console.log(enteredBody)
   
   return (
     <>
