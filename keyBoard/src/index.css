@@ -37,6 +37,12 @@ h3,h5 {
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   margin: 0.5px;
 }
+h3{
+  margin-top: 20px;
+}
+h5{
+  margin-top: 10px;
+}
 
 
 button {
@@ -62,9 +68,16 @@ button:active{
   background-color:rgba(127, 166, 238, 0.721);
 } 
 
+.text{
+  margin-bottom: 70px;
+  margin-top:70px ;
+}
+
 .colorPicker{
+  border: #1a1a1a solid 1px;
   margin-left: 120px;
   justify-self:center;
+  margin-bottom: 3px;
 }
 @media (prefers-color-scheme: light) {
   :root {

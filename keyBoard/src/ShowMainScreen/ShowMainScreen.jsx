@@ -15,8 +15,8 @@ function ShowMainScreen() {
 
     return (
         <>
-            <p ><DisplayBody enteredBodyState={enteredBody} /></p>
-            <Letters enteredBodyState={enteredBody} enteredBodySetState={setEnteredBody} requestedArray={RequestedArray} Mstyle={myStyle} setUndo={setundoArray} />
+            <p className='text'><DisplayBody enteredBodyState={enteredBody} /></p>
+            <Letters  enteredBodyState={enteredBody} enteredBodySetState={setEnteredBody} requestedArray={RequestedArray} Mstyle={myStyle} setUndo={setundoArray} />
             <SpecialButtons enteredBodyState={enteredBody} enteredBodySetState={setEnteredBody} setUndo={setundoArray} />
             <Undo enteredBodySetState={setEnteredBody} setStyle={setStyle} Undo={undoArray} /><br />
             <h3>Language</h3>
