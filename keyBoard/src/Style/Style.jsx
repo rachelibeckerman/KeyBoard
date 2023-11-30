@@ -1,46 +1,38 @@
 import React, { useState } from "react";
 import { ChromePicker } from "react-color";
 
-//import { onClickOutside } from '@vueuse/core'
-//import { ColorPicker} from "./ColorPicker";
-
 function Style(props) {
     const [colorPickerVisible, setColorPickerVisible] = useState(false);
-    // const colors = ['red', 'black', 'blue', 'pink'];
     const sizes = ['Larger', 'smaller'];
     const font = ['cursive', 'inherit', 'fantasy',];
 
     function onChangeColor(val) {
-        //props.setUndo(cur => [...cur,props.state])
-        props.setState({ color: val, size: props.state.size, font: props.state.font });
+        props.setStyle({ color: val, size: props.Mstyle.size, font: props.Mstyle.font });
     }
 
     function onChangeSize(val) {
         if (val == 'Larger')
-            props.setState({ color: props.state.color, size: props.state.size + 1, font: props.state.font });
-        else if (props.state.size > 10)
-            props.setState({ color: props.state.color, size: props.state.size - 1, font: props.state.font });
+            props.setStyle({ color: props.Mstyle.color, size: props.Mstyle.size + 1, font: props.Mstyle.font });
+        else if (props.Mstyle.size > 10)
+            props.setStyle({ color: props.Mstyle.color, size: props.Mstyle.size - 1, font: props.Mstyle.font });
     }
 
     function onChangeFont(val) {
-        props.setState({ color: props.state.color, size: props.state.size, font: val });
+        props.setStyle({ color: props.Mstyle.color, size: props.Mstyle.size, font: val });
     }
 
-    // const createColorsButtons = colors.map((sBtn, i) =>
-    //     <button style={{ color: sBtn }} key={i} className={sBtn} onClick={() => onChangeColor(sBtn)}>{sBtn}</button>)
-
-    function createColorsButton(){
+    function createColorsButton() {
         return (
             colorPickerVisible ? (
-            <>
-                <ChromePicker className="colorPicker"
-                    color={props.state.color}
-                    onChange={(color) => onChangeColor(color.hex)}
-                />
-                <button onClick={() => setColorPickerVisible(false)}>Close the color map</button>
-            </>
+                <>
+                    <ChromePicker className="colorPicker"
+                        color={props.Mstyle.color}
+                        onChange={(color) => onChangeColor(color.hex)}
+                    />
+                    <button onClick={() => setColorPickerVisible(false)}>Close the color map</button>
+                </>
             ) : (
-            <button onClick={() => setColorPickerVisible(true)}>Choose a color</button>
+                <button onClick={() => setColorPickerVisible(true)}>Choose a color</button>
             )
         )
     }

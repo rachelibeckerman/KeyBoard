@@ -7,7 +7,7 @@ function Undo(props) {
 
         let lastAction = props.Undo.pop()
         if (lastAction != undefined) {
-            props.setState(lastAction);
+            props.enteredBodySetState(lastAction);
             props.setStyle(lastAction[lastAction.length - 1].style)
         }
     }

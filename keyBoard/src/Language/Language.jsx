@@ -19,7 +19,7 @@ function Language(props) {
             case "😀": RequestedArray = "Emojis";
                 break;
         }
-        props.setState(RequestedArray);
+        props.setRequestedArray(RequestedArray);
     }
 
     const ButtonsLanguages = Languages.map((language, i) =>
