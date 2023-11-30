@@ -14,7 +14,7 @@ function App() {
   const [enteredBody, setEnteredBody] = useState([]);
   const [RequestedArray, setRequestedArray] = useState("EnglishLC")
   const [myStyle , setStyle] = useState({color:'black',size:17,font:'inherit'})
-
+console.log(undoArray)
   
   return (
     <>
@@ -27,7 +27,7 @@ function App() {
       <h3>style</h3>
       <Style state={myStyle} setState={setStyle} Undo={undoArray} setUndo={setundoArray}/><br />
       <h3>General changes</h3>
-      <ChangeAllStyle state={enteredBody} setState={setEnteredBody} setStyle = {setStyle} />
+      <ChangeAllStyle state={enteredBody} setState={setEnteredBody} setStyle = {setStyle} Undo={undoArray} setUndo={setundoArray}/>
       
     </>
   )
