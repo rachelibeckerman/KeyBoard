@@ -6,7 +6,7 @@ import DisplayBody from './DisplayBody'
 import Style from './Style'
 import ChangeAllStyle from './ChangeAllStyle'
 import Undo from './Undo'
-import img from '../img/Asset 2@4x.png'
+import img from '../img/logo.png'
 
 function ShowMainScreen() {
     const [undoArray, setundoArray] = useState([]);
