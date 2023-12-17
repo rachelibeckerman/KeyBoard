@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 
 
-
 function ChangeAllStyle(props) {
 
     const specialButtons = ['Delete All', 'Upper All', 'Lower All'];

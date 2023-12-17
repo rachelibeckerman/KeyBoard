@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
-import Letters from '../Letters/Letters'
-import Language from '../Language/Language'
-import SpecialButtons from '../SpecialButtons/SpecialButtons'
-import DisplayBody from '../DisplayBody/DisplayBody'
-import Style from '../Style/Style'
-import ChangeAllStyle from '../ChangeAllStyle/ChangeAllStyle'
-import Undo from '../Undo/Undo'
+import Letters from './Letters'
+import Language from './Language'
+import SpecialButtons from './SpecialButtons'
+import DisplayBody from './DisplayBody'
+import Style from './Style'
+import ChangeAllStyle from './ChangeAllStyle'
+import Undo from './Undo'
+import img from '../img/Asset 2@4x.png'
 
 function ShowMainScreen() {
     const [undoArray, setundoArray] = useState([]);
@@ -15,8 +16,10 @@ function ShowMainScreen() {
 
     return (
         <>
+            <img src={img} style={{ width: '150px', hight: '70px' }}/>
+            <h5>!ביחד ננצח</h5>
             <p className='text'><DisplayBody enteredBodyState={enteredBody} /></p>
-            <Letters  enteredBodyState={enteredBody} enteredBodySetState={setEnteredBody} requestedArray={RequestedArray} Mstyle={myStyle} setUndo={setundoArray} />
+            <Letters enteredBodyState={enteredBody} enteredBodySetState={setEnteredBody} requestedArray={RequestedArray} Mstyle={myStyle} setUndo={setundoArray} />
             <SpecialButtons enteredBodyState={enteredBody} enteredBodySetState={setEnteredBody} setUndo={setundoArray} />
             <Undo enteredBodySetState={setEnteredBody} setStyle={setStyle} Undo={undoArray} /><br />
             <h3>Language</h3>

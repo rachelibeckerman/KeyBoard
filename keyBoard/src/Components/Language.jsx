@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Letters from '../Letters/Letters';
+import Letters from './Letters';
 
 function Language(props) {
 
